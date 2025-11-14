@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import { DOMAIN } from '@/config';
 
 export default function Terms() {
     const effectiveDate = "December 2024";
@@ -121,6 +122,10 @@ export default function Terms() {
             <Head>
                 <title>Terms and Conditions - Cute Cut Pro Download</title>
                 <meta name="description" content="Read our Terms and Conditions to understand the rules and guidelines for using our APK download service." />
+                <link rel="canonical" href={`${DOMAIN}/terms`} />
+                <meta name="author" content="Divyanshu Rawat" />
+                <meta name="robots" content="index, follow" />
+                <meta name="language" content="English" />
             </Head>
 
             <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12">

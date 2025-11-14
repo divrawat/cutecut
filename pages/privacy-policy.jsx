@@ -7,6 +7,11 @@ export default function PrivacyPolicy() {
             <Head>
                 <title>Privacy Policy - Cute Cut Pro</title>
                 <meta name="description" content="Read our Privacy Policy to understand how we protect your data and privacy while using Cute Cut Pro." />
+
+                <link rel="canonical" href={`${DOMAIN}/privacy-policy`} />
+                <meta name="author" content="Divyanshu Rawat" />
+                <meta name="robots" content="index, follow" />
+                <meta name="language" content="English" />
             </Head>
 
             <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12">

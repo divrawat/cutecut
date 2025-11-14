@@ -7,6 +7,10 @@ export default function AboutUs() {
             <Head>
                 <title>About Us - Cute Cut Pro Download</title>
                 <meta name="description" content="Learn about our mission to provide safe, reliable APK downloads for Cute Cut Pro video editor." />
+                <link rel="canonical" href={`${DOMAIN}/about`} />
+                <meta name="author" content="Divyanshu Rawat" />
+                <meta name="robots" content="index, follow" />
+                <meta name="language" content="English" />
             </Head>
 
             <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12">

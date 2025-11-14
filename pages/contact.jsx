@@ -82,6 +82,11 @@ export default function Contact() {
             <Head>
                 <title>Contact Us - Cute Cut Pro Download</title>
                 <meta name="description" content="Get in touch with us for support, questions, or feedback about Cute Cut Pro APK downloads." />
+
+                <link rel="canonical" href={`${DOMAIN}/contact`} />
+                <meta name="author" content="Divyanshu Rawat" />
+                <meta name="robots" content="index, follow" />
+                <meta name="language" content="English" />
             </Head>
 
             <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-12">

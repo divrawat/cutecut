@@ -1,5 +1,9 @@
 // export const DOMAIN = 'http://localhost:3000';
-export const DOMAIN = 'https://martialpeak.info';
+export const DOMAIN = 'https://cutecut.info';
+
+
+
+export const CONTENT_TITLE = `Cute Cut Pro`;
 
 export const DOMAIN_NAME = 'martialpeak.info';
 

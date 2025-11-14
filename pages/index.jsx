@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import { DOMAIN, CONTENT_TITLET } from '@/config';
 
 export default function Home() {
   const handleDownload = () => {
@@ -142,6 +143,25 @@ export default function Home() {
         <meta name="description" content="Download Cute Cut Pro APK - The ultimate video and audio editing app for Android. Create stunning videos with professional tools, no watermark, completely free." />
         <meta name="keywords" content="cute cut pro, video editor, apk download, android app, video editing, audio editing, no watermark" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Cute Cut Pro - Professional Video Editor APK Download" />
+        <meta property="og:description" content="Download Cute Cut Pro APK - The ultimate video and audio editing app for Android. Create stunning videos with professional tools, no watermark, completely free." />
+        <meta property="og:image" content="/logo.png" />
+        <meta property="og:url" content={DOMAIN} />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Cute Cut Pro" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cute Cut Pro - Professional Video Editor APK Download" />
+        <meta name="twitter:description" content="Download Cute Cut Pro APK - The ultimate video and audio editing app for Android. Create stunning videos with professional tools, no watermark, completely free." />
+        <meta name="twitter:image" content="/logo.png" />
+        <meta name="author" content="Divyanshu Rawat" />
+        <meta name="robots" content="index, follow" />
+        <meta name="language" content="English" />
+        <meta property="article:published_time" content="2025-11-12" />
+        <meta property="article:modified_time" content="2025-11-12" />
+        <link rel="icon" href="/logo.png" />
+        <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="canonical" href={DOMAIN} />
+
       </Head>
 
       {/* Redesigned Hero Section */}
