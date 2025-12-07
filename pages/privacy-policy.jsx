@@ -1,5 +1,6 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
+import { DOMAIN } from '@/config';
 
 export default function PrivacyPolicy() {
     return (
