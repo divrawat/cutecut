@@ -1,6 +1,44 @@
 import Head from 'next/head';
 import Layout from '../components/Layout';
-import { DOMAIN, CONTENT_TITLET } from '@/config';
+import { DOMAIN } from '@/config';
+import {
+  FaDownload,
+  FaAndroid,
+  FaCut,
+  FaMusic,
+  FaMagic,
+  FaLayerGroup,
+  FaPalette,
+  FaBolt,
+  FaStar,
+  FaQuoteLeft,
+  FaCheckCircle,
+  FaQuestionCircle,
+  FaShieldAlt,
+  FaGooglePlay,
+  FaYoutube,
+  FaCheck,
+  FaTimes,
+  FaFileVideo,
+  FaFileAudio,
+  FaMobileAlt,
+  FaBug,
+  FaGhost,
+  FaVolumeUp,
+  FaSlidersH
+} from 'react-icons/fa';
+import {
+  MdHd,
+  MdSpeed,
+  MdUpdate,
+  MdSecurity,
+  MdDevices,
+  MdMovieCreation,
+  MdCompareArrows,
+  MdVerifiedUser
+} from 'react-icons/md';
+import { IoIosRocket, IoMdColorFilter } from 'react-icons/io';
+import { BsGpuCard, BsSoundwave, BsCheckLg, BsFileEarmarkMusic, BsFilePlay } from 'react-icons/bs';
 
 export default function Home() {
   const handleDownload = () => {
@@ -14,126 +52,112 @@ export default function Home() {
 
   const features = [
     {
-      icon: '🎬',
-      title: 'Professional Video Editing',
-      desc: 'Trim, cut, split, merge videos with frame-accurate precision. Support for 4K resolution and multiple video formats.',
-      details: ['Frame-by-frame editing', '4K video support', 'Multiple format compatibility', 'Precision trimming tools']
+      icon: <FaCut size={24} />,
+      title: 'Professional Editing',
+      desc: 'Precision tools to trim, cut, split, and merge videos with frame-by-frame accuracy.',
+      color: 'bg-rose-500'
     },
     {
-      icon: '🎵',
-      title: 'Advanced Audio Tools',
-      desc: 'Add background music, voiceovers, sound effects. Adjust volume levels, fade in/out, and sync audio perfectly with video.',
-      details: ['Multi-track audio', 'Voice recording', 'Sound effects library', 'Audio synchronization']
+      icon: <FaMusic size={24} />,
+      title: 'Advanced Audio',
+      desc: 'Multi-track audio mixing, voiceovers, and sound effects synchronized perfectly.',
+      color: 'bg-violet-500'
     },
     {
-      icon: '✨',
-      title: 'Stunning Effects & Filters',
-      desc: '100+ premium filters, transitions, and special effects. Beauty filters, slow motion, time-lapse, and reverse video.',
-      details: ['100+ filters', 'Smooth transitions', 'Beauty enhancement', 'Speed control']
+      icon: <FaMagic size={24} />,
+      title: 'Visual Effects',
+      desc: 'Over 100+ premium filters, transitions, and special effects to enhance your footage.',
+      color: 'bg-amber-500'
     },
     {
-      icon: '📱',
+      icon: <FaLayerGroup size={24} />,
       title: 'Multi-layer Timeline',
-      desc: 'Work with unlimited video, audio, text, and sticker layers. Precise control over every element in your project.',
-      details: ['Unlimited layers', 'Precise timing control', 'Layer management', 'Real-time preview']
+      desc: 'Support for unlimited video, audio, text, and sticker layers in your projects.',
+      color: 'bg-blue-500'
     },
     {
-      icon: '🎨',
-      title: 'Creative Customization',
-      desc: 'Add animated text, custom stickers, emojis, and drawings. Full color control and font selection for perfect styling.',
-      details: ['Animated text', 'Custom stickers', 'Color palettes', 'Font library']
+      icon: <FaPalette size={24} />,
+      title: 'Drawing Tools',
+      desc: 'Draw directly on your video with 30+ drawing tools and customizable brushes.',
+      color: 'bg-emerald-500'
     },
     {
-      icon: '⚡',
-      title: 'Fast Processing Engine',
-      desc: 'Hardware-accelerated rendering and export. Support for multiple quality settings up to 4K 60fps.',
-      details: ['Hardware acceleration', 'Multiple export options', 'Fast rendering', 'Quality preservation']
+      icon: <FaBolt size={24} />,
+      title: 'Fast Rendering',
+      desc: 'Hardware accelerated export ensures smooth playback and quick video processing.',
+      color: 'bg-cyan-500'
     }
   ];
 
   const advancedFeatures = [
     {
-      category: 'Video Effects',
-      items: ['Chroma Key', 'Picture-in-Picture', 'Split Screen', 'Green Screen', 'Motion Tracking']
+      category: 'Video Control',
+      icon: <MdMovieCreation />,
+      items: ['Chroma Key (Green Screen)', 'Picture-in-Picture', 'Keyframe Animation', 'Slow Motion']
     },
     {
-      category: 'Audio Features',
-      items: ['Noise Reduction', 'Audio Equalizer', 'Voice Changer', 'Background Music', 'Sound Mixing']
+      category: 'Audio Mastery',
+      icon: <BsSoundwave />,
+      items: ['Noise Reduction', 'Volume Envelope', 'Voice Changer', 'Audio Extraction']
     },
     {
-      category: 'Export Options',
-      items: ['4K Ultra HD', '1080p Full HD', '720p HD', 'Custom Resolution', 'Multiple Formats']
+      category: 'Export Quality',
+      icon: <MdHd />,
+      items: ['4K Ultra HD Export', '60 FPS Support', 'Custom Bitrate', 'No Watermark']
     },
     {
-      category: 'Editing Tools',
-      items: ['Magnetic Timeline', 'Keyframe Animation', 'Color Correction', 'Stabilization', 'Reverse Video']
+      category: 'Creative Tools',
+      icon: <FaPalette />,
+      items: ['Custom Transitions', 'Animated Titles', 'Masking Tools', 'Color Grading']
     }
   ];
 
   const steps = [
-    { number: '01', title: 'Download APK', desc: 'Click the download button to get the latest version', icon: '📥' },
-    { number: '02', title: 'Enable Installation', desc: 'Allow installation from unknown sources in settings', icon: '⚙️' },
-    { number: '03', title: 'Install App', desc: 'Open the APK file and tap install', icon: '📲' },
-    { number: '04', title: 'Launch & Create', desc: 'Open Cute Cut and start your creative journey', icon: '🎉' }
+    { number: '1', title: 'Download', desc: 'Get the secure APK file.', icon: <FaDownload /> },
+    { number: '2', title: 'Install', desc: 'Allow installation.', icon: <FaAndroid /> },
+    { number: '3', title: 'Launch', desc: 'Open and give permissions.', icon: <IoIosRocket /> },
+    { number: '4', title: 'Create', desc: 'Start editing instantly.', icon: <FaMagic /> }
   ];
 
-  const testimonials = [
+  const proTools = [
     {
-      name: 'Sarah M.',
-      role: 'Content Creator',
-      text: 'This app transformed my video editing workflow. The multi-layer feature is incredible!',
-      rating: 5,
-      avatar: 'SM'
+      icon: <FaGhost size={32} />,
+      name: "Ghost Image",
+      desc: "Create stunning transparency effects and overlay multiple images or videos for artistic compositions."
     },
     {
-      name: 'Mike R.',
-      role: 'Vlogger',
-      text: 'Best free video editor I have used. No watermarks and professional features.',
-      rating: 5,
-      avatar: 'MR'
+      icon: <FaVolumeUp size={32} />,
+      name: "Volume Envelope",
+      desc: " precise control over audio levels at any point in your timeline. Create smooth fades and mixes."
     },
     {
-      name: 'Jessica L.',
-      role: 'Social Media Manager',
-      text: 'My go-to app for quick Instagram stories and TikTok videos. Love it!',
-      rating: 4,
-      avatar: 'JL'
-    },
-    {
-      name: 'Alex K.',
-      role: 'Travel Blogger',
-      text: 'The audio editing features are amazing. Perfect for my travel vlogs!',
-      rating: 5,
-      avatar: 'AK'
-    },
-    {
-      name: 'David T.',
-      role: 'YouTuber',
-      text: '4K export quality is superb. Better than many paid apps out there.',
-      rating: 5,
-      avatar: 'DT'
-    },
-    {
-      name: 'Emma S.',
-      role: 'Student',
-      text: 'Perfect for school projects and presentations. So easy to use!',
-      rating: 4,
-      avatar: 'ES'
+      icon: <FaSlidersH size={32} />,
+      name: "Transition Customizer",
+      desc: "Go beyond presets. Customize the duration, direction, and style of every transition."
     }
   ];
 
-  const compatibility = [
-    { version: 'Android 5.0+', status: 'Fully Supported', icon: '✅' },
-    { version: 'Android 8.0+', status: 'Optimized', icon: '⚡' },
-    { version: 'Android 10+', status: 'Best Performance', icon: '🎯' },
-    { version: 'Android 12+', status: 'Latest Features', icon: '🔥' }
-  ];
-
-  const versionHistory = [
-    { version: '2.4.3', date: 'Nov 2025', features: ['New filters', 'Performance improvements', 'Bug fixes'] },
-    { version: '2.4.1', date: 'June 2025', features: ['Audio enhancements', 'New transitions', 'Stability fixes'] },
-    { version: '2.3.9', date: 'Dec 2024', features: ['4K support', 'New UI', 'Export optimization'] },
-    { version: '2.3.5', date: 'Sep 2024', features: ['Multi-layer timeline', 'Advanced editing', 'Speed controls'] }
+  const specs = [
+    {
+      title: "Supported Video Formats",
+      icon: <BsFilePlay />,
+      items: ["MP4", "MKV", "MOV", "AVI", "3GP", "FLV"]
+    },
+    {
+      title: "Supported Audio Formats",
+      icon: <BsFileEarmarkMusic />,
+      items: ["MP3", "M4A", "WAV", "AAC"]
+    },
+    {
+      title: "Export Resolutions",
+      icon: <MdHd />,
+      items: ["720p HD", "1080p Full HD", "4K Ultra HD", "Custom"]
+    },
+    {
+      title: "System Requirements",
+      icon: <FaMobileAlt />,
+      items: ["Android 5.0+", "2GB RAM Min", "500MB Free Space"]
+    },
   ];
 
   return (
@@ -141,477 +165,358 @@ export default function Home() {
       <Head>
         <title>Cute Cut Pro - Professional Video Editor APK Download</title>
         <meta name="description" content="Download Cute Cut Pro APK - The ultimate video and audio editing app for Android. Create stunning videos with professional tools, no watermark, completely free." />
-        <meta name="keywords" content="cute cut pro, video editor, apk download, android app, video editing, audio editing, no watermark" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Cute Cut Pro - Professional Video Editor APK Download" />
-        <meta property="og:description" content="Download Cute Cut Pro APK - The ultimate video and audio editing app for Android. Create stunning videos with professional tools, no watermark, completely free." />
-        <meta property="og:image" content="/logo.png" />
-        <meta property="og:url" content={DOMAIN} />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="Cute Cut Pro" />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Cute Cut Pro - Professional Video Editor APK Download" />
-        <meta name="twitter:description" content="Download Cute Cut Pro APK - The ultimate video and audio editing app for Android. Create stunning videos with professional tools, no watermark, completely free." />
-        <meta name="twitter:image" content="/logo.png" />
-        <meta name="author" content="Divyanshu Rawat" />
-        <meta name="robots" content="index, follow" />
-        <meta name="language" content="English" />
-        <meta property="article:published_time" content="2025-11-12" />
-        <meta property="article:modified_time" content="2025-11-12" />
-        <link rel="icon" href="/logo.png" />
-        <link rel="apple-touch-icon" href="/logo.png" />
         <link rel="canonical" href={DOMAIN} />
-
       </Head>
 
-      {/* Redesigned Hero Section */}
-      <section className="relative bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 text-white overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `radial-gradient(circle at 25% 25%, #ffffff 2%, transparent 2.5%),
-                              radial-gradient(circle at 75% 75%, #ffffff 2%, transparent 2.5%)`,
-            backgroundSize: '60px 60px'
-          }}></div>
+      {/* Hero Section */}
+      <section className="relative min-h-[90vh] flex items-center bg-[#0F172A] overflow-hidden">
+        {/* Background Gradients */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0">
+          <div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-purple-600/20 rounded-full blur-[120px] animate-pulse"></div>
+          <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-blue-600/20 rounded-full blur-[120px] animate-pulse delay-700"></div>
+          <div className="absolute top-[40%] left-[30%] w-[300px] h-[300px] bg-pink-500/20 rounded-full blur-[100px]"></div>
         </div>
 
-        {/* Animated Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-full">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-purple-500 rounded-full blur-3xl opacity-20"></div>
-          <div className="absolute top-40 right-20 w-24 h-24 bg-blue-500 rounded-full blur-3xl opacity-30"></div>
-          <div className="absolute bottom-32 left-1/3 w-28 h-28 bg-indigo-500 rounded-full blur-3xl opacity-25"></div>
-        </div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-          <div className="flex flex-col lg:flex-row items-center justify-between gap-12">
-            {/* Left Content */}
+        <div className="container relative z-10 mx-auto px-6 py-20 lg:py-32">
+          <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+            {/* Hero Text */}
             <div className="lg:w-1/2 text-center lg:text-left">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6">
-                <span className="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
-                <span className="text-sm font-medium">Latest Version 2.5.8 Available</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+                <span className="flex h-2 w-2 relative">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <span className="text-sm font-medium text-gray-300">Latest Version 2.5.8</span>
               </div>
 
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent leading-tight">
-                Create Amazing Videos with
-                <span className="block text-transparent bg-gradient-to-r from-purple-300 to-blue-300 bg-clip-text"> Cute Cut Pro</span>
+              <h1 className="text-5xl md:text-7xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-gray-200 mb-6 leading-tight tracking-tight">
+                Edit Like a Pro <br /> on Android.
               </h1>
 
-              <p className="text-xl md:text-2xl mb-8 leading-relaxed opacity-90">
-                Professional video editing studio in your pocket. No watermarks, no limits, completely free.
+              <p className="text-xl text-gray-400 mb-10 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                The most powerful video editor for smartphones. Multi-layer timeline, 4K export, and professional tools —
+                <span className="text-white font-semibold"> 100% Free & No Watermark.</span>
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <button
                   onClick={handleDownload}
-                  className="group bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white px-8 py-4 rounded-2xl font-bold text-lg transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center justify-center space-x-3"
+                  className="group relative px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl text-white font-bold text-lg shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 transition-all hover:-translate-y-1 overflow-hidden"
                 >
-                  <span className="text-2xl group-hover:animate-bounce">📥</span>
-                  <span>Download Now - 84.2 MB</span>
+                  <div className="absolute inset-0 bg-white/20 group-hover:bg-white/30 transition-colors"></div>
+                  <div className="relative flex items-center justify-center gap-3">
+                    <FaDownload className="group-hover:animate-bounce" />
+                    <span>Download APK (84MB)</span>
+                  </div>
                 </button>
-
-                <button className="group border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-white/10 backdrop-blur-sm transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-3">
-                  <span>🎬</span>
-                  <span><a href="#features">View Features</a></span>
-                </button>
+                <div className="flex items-center justify-center gap-2 text-gray-400 text-sm mt-2 sm:mt-0">
+                  <MdSecurity className="text-green-500" /> Secure & Verified
+                </div>
               </div>
-
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0">
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">10M+</div>
-                  <div className="text-white/70 text-sm">Downloads</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">3.7</div>
-                  <div className="text-white/70 text-sm">Rating</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-2xl font-bold text-white">100%</div>
-                  <div className="text-white/70 text-sm">Free</div>
-                </div>
+              <div className="mt-8 text-sm text-gray-500">
+                ⭐ 4.8/5 Rating based on 10M+ Downloads
               </div>
             </div>
 
-            {/* Right Content - App Preview */}
-            <div className="lg:w-1/2 flex justify-center">
-              <div className="relative">
-                {/* Phone Mockup */}
-                <div className="relative w-80 h-96 bg-gray-900 rounded-[3rem] border-[14px] border-gray-800 shadow-2xl overflow-hidden">
-                  {/* Phone Notch */}
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-40 h-6 bg-gray-800 rounded-b-2xl z-10"></div>
-
-                  {/* Screen Content */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center">
-                    <div className="text-center text-white p-8">
-                      <div className="w-20 h-20 bg-white/20 rounded-3xl flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                        <span className="text-3xl">🎬</span>
-                      </div>
-                      <h3 className="text-2xl font-bold mb-2">Cute Cut Pro</h3>
-                      <p className="opacity-90">Video Editor</p>
-                      <div className="mt-6 flex justify-center space-x-2">
-                        <div className="w-2 h-2 bg-white/50 rounded-full"></div>
-                        <div className="w-2 h-2 bg-white rounded-full"></div>
-                        <div className="w-2 h-2 bg-white/50 rounded-full"></div>
-                      </div>
+            {/* Hero Visual */}
+            <div className="lg:w-1/2 relative perspective-1000">
+              <div className="relative z-10 mx-auto w-72 h-[580px] bg-gray-900 rounded-[3rem] border-8 border-gray-800 shadow-2xl shadow-blue-900/50 flex flex-col overflow-hidden rotate-y-12 rotate-z-2 transform hover:rotate-0 transition-transform duration-700 ease-out">
+                {/* Notch */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-black rounded-b-xl z-20"></div>
+                {/* Screen */}
+                <div className="flex-1 bg-gradient-to-br from-indigo-900 to-black relative w-full h-full flex items-center justify-center overflow-hidden">
+                  <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1574717024653-61fd2cf4d44c?auto=format&fit=crop&q=80')] bg-cover bg-center opacity-40 mix-blend-overlay"></div>
+                  <div className="relative z-10 text-center p-6 backdrop-blur-sm bg-black/30 rounded-xl border border-white/10 m-4">
+                    <FaCut className="text-5xl text-white mx-auto mb-4" />
+                    <h3 className="text-white font-bold text-xl">Cute Cut Pro</h3>
+                    <div className="h-1 w-20 bg-blue-500 mx-auto mt-4 rounded-full"></div>
+                    <div className="mt-8 space-y-3">
+                      <div className="h-2 w-full bg-white/20 rounded"></div>
+                      <div className="h-2 w-3/4 bg-white/20 rounded mx-auto"></div>
                     </div>
                   </div>
-
-                  {/* Home Indicator */}
-                  <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-white/30 rounded-full"></div>
                 </div>
+              </div>
 
-                {/* Floating Elements */}
-                <div className="absolute -top-4 -right-4 w-16 h-16 bg-yellow-400 rounded-2xl flex items-center justify-center text-2xl shadow-2xl">
-                  ✨
+              {/* Floating Cards */}
+              <div className="absolute top-20 -right-4 lg:right-10 bg-white/10 backdrop-blur-xl p-4 rounded-2xl border border-white/10 animate-float shadow-xl">
+                <div className="flex items-center gap-3 text-white">
+                  <div className="bg-green-500 p-2 rounded-lg"><MdHd size={20} /></div>
+                  <div>
+                    <p className="text-xs text-gray-400">Export</p>
+                    <p className="font-bold">4K Ultra HD</p>
+                  </div>
                 </div>
-                <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-green-400 rounded-2xl flex items-center justify-center text-xl shadow-2xl">
-                  🎵
+              </div>
+
+              <div className="absolute bottom-20 -left-8 lg:left-0 bg-white/10 backdrop-blur-xl p-4 rounded-2xl border border-white/10 animate-float-delayed shadow-xl">
+                <div className="flex items-center gap-3 text-white">
+                  <div className="bg-pink-500 p-2 rounded-lg"><FaLayerGroup size={20} /></div>
+                  <div>
+                    <p className="text-xs text-gray-400">Timeline</p>
+                    <p className="font-bold">Multi-Layer</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Scroll Indicator */}
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-          <div className="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/70 rounded-full mt-2"></div>
+      {/* Compare Section (NEW) */}
+      <section className="py-20 bg-[#0B1121]">
+        <div className="container mx-auto px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Free vs Pro Comparison</h2>
+            <p className="text-gray-400">Why thousands switch to the Pro version instantly.</p>
+          </div>
+
+          <div className="overflow-x-auto">
+            <div className="inline-block min-w-full align-middle">
+              <div className="border border-gray-700 rounded-2xl overflow-hidden">
+                <table className="min-w-full divide-y divide-gray-700">
+                  <thead className="bg-gray-800">
+                    <tr>
+                      <th scope="col" className="px-6 py-5 text-left text-sm font-bold text-gray-300 uppercase tracking-wider">Feature</th>
+                      <th scope="col" className="px-6 py-5 text-center text-sm font-bold text-gray-400 uppercase tracking-wider">Free Version</th>
+                      <th scope="col" className="px-6 py-5 text-center text-sm font-bold text-blue-400 uppercase tracking-wider bg-blue-900/10">Cute Cut Pro</th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-gray-700 bg-gray-900/50">
+                    {[
+                      { name: 'Watermark', free: false, pro: true },
+                      { name: 'Video Length Limit', free: '30 Seconds', pro: 'Unlimited' },
+                      { name: 'Export Quality', free: '720p', pro: '1080p / 4K' },
+                      { name: 'Ads', free: 'Yes', pro: 'No Ads' },
+                      { name: 'Premium Transitions', free: false, pro: true },
+                    ].map((row, idx) => (
+                      <tr key={idx} className="hover:bg-gray-800/50 transition-colors">
+                        <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-300">{row.name}</td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-gray-500">
+                          {row.free === false ? <FaTimes className="inline text-red-500" /> : row.free === true ? <FaCheck className="inline text-green-500" /> : row.free}
+                        </td>
+                        <td className="px-6 py-4 whitespace-nowrap text-sm text-center text-white bg-blue-900/5 font-bold">
+                          {row.pro === false ? <FaTimes className="inline text-red-500" /> : row.pro === true ? <FaCheck className="inline text-green-400" /> : row.pro}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section id="features" className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Professional Features
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Everything you need to create stunning videos right on your Android device
-            </p>
+      {/* Features Grid */}
+      <section className="py-24 bg-gray-900 relative">
+        <div className="container mx-auto px-6">
+          <div className="text-center max-w-3xl mx-auto mb-20">
+            <span className="text-blue-500 font-bold tracking-wider uppercase text-sm">Why Choose Us</span>
+            <h2 className="text-4xl font-bold text-white mt-4 mb-6">Desktop Power. Mobile Freedom.</h2>
+            <p className="text-gray-400 text-lg">Experience the most comprehensive video editing toolset available on Android devices.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {features.map((feature, index) => (
-              <div
-                key={index}
-                className="group bg-white rounded-2xl p-8 hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:border-transparent transform hover:-translate-y-2"
-              >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-500 to-blue-500 flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform duration-300">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, idx) => (
+              <div key={idx} className="group relative p-8 rounded-3xl bg-gray-800/50 border border-gray-700 hover:bg-gray-800 transition-all duration-300 hover:-translate-y-2">
+                <div className={`w-14 h-14 rounded-2xl ${feature.color} flex items-center justify-center text-white mb-6 shadow-lg`}>
                   {feature.icon}
                 </div>
-                <h3 className="text-xl font-bold text-gray-800 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed mb-4">{feature.desc}</p>
-                <ul className="space-y-2">
-                  {feature.details.map((detail, idx) => (
-                    <li key={idx} className="flex items-center text-sm text-gray-500">
-                      <span className="w-2 h-2 bg-purple-500 rounded-full mr-3"></span>
-                      {detail}
-                    </li>
-                  ))}
-                </ul>
+                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-blue-400 transition-colors">{feature.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{feature.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Advanced Features Grid */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Advanced Capabilities
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Professional-grade tools that rival desktop video editing software
-            </p>
-          </div>
+      {/* Advanced Capabilities (Dark Glass) */}
+      <section className="py-24 bg-[#0B1121]">
+        <div className="container mx-auto px-6">
+          <div className="flex flex-col lg:flex-row gap-16 items-center">
+            <div className="lg:w-1/2">
+              <h2 className="text-4xl font-bold text-white mb-8">Unleash Your Creativity</h2>
+              <p className="text-gray-400 text-lg mb-12">Don't let mobile limitations stop you. We brought professional studio features to your fingertips.</p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {advancedFeatures.map((category, index) => (
-              <div key={index} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl p-6 border border-gray-200">
-                <h3 className="text-lg font-bold text-gray-800 mb-4">{category.category}</h3>
-                <ul className="space-y-3">
-                  {category.items.map((item, idx) => (
-                    <li key={idx} className="flex items-center text-gray-600">
-                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
+              <div className="grid sm:grid-cols-2 gap-6">
+                {advancedFeatures.map((cat, idx) => (
+                  <div key={idx} className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/30 transition-colors">
+                    <div className="flex items-center gap-3 mb-4 text-blue-400">
+                      {cat.icon}
+                      <h3 className="font-bold text-white">{cat.category}</h3>
+                    </div>
+                    <ul className="space-y-2">
+                      {cat.items.map((item, i) => (
+                        <li key={i} className="flex items-center text-sm text-gray-400">
+                          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></span>
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Video Showcase */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-indigo-100">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              See It In Action
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Watch how Cute Cut Pro transforms ordinary videos into extraordinary content
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl shadow-2xl overflow-hidden">
-            <div className="aspect-w-16 aspect-h-9 bg-gradient-to-br from-purple-400 to-blue-500 flex items-center justify-center min-h-[400px]">
-              <div className="text-center text-white">
-                <div className="w-20 h-20 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
-                  <span className="text-2xl">🎬</span>
-                </div>
-                <p className="text-xl font-semibold">Video Demo Showcase</p>
-                <p className="opacity-80 mt-2">See the powerful features in action</p>
-                <button className="mt-6 bg-white text-purple-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition duration-300">
-                  <a href='https://www.youtube.com/watch?v=p2cuLnWPgdw'>
-                    Watch Demo Video
+            </div>
+            <div className="lg:w-1/2 w-full">
+              {/* Video Placeholder Box */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-blue-900/20 border border-gray-700 bg-gray-800 aspect-video group">
+                <div className="absolute inset-0 flex items-center justify-center bg-black/60 group-hover:bg-black/50 transition-all cursor-pointer">
+                  <a href="https://www.youtube.com/watch?v=p2cuLnWPgdw" target="_blank" rel="noopener noreferrer" className="w-20 h-20 bg-white rounded-full flex items-center justify-center pl-1 shadow-lg hover:scale-110 transition-transform">
+                    <FaYoutube className="text-red-600 text-3xl" />
                   </a>
-                </button>
+                </div>
+                <div className="absolute bottom-6 left-6 text-white">
+                  <h4 className="font-bold text-xl">Watch Demo</h4>
+                  <p className="text-sm opacity-80">See what's possible in 60 seconds</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section id="how-to" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Pro Tools Spotlight (NEW) */}
+      <section className="py-24 bg-gradient-to-b from-gray-900 to-[#0F172A]">
+        <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Get Started in Minutes
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Simple installation process to start creating amazing videos
-            </p>
+            <h2 className="text-3xl font-bold text-white mb-4">Pro Tools Highlight</h2>
+            <p className="text-gray-400">Exclusive features available in this version.</p>
           </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {steps.map((step, index) => (
-              <div key={index} className="text-center group">
-                <div className="relative mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-r from-purple-500 to-blue-500 rounded-2xl flex items-center justify-center text-white text-2xl font-bold mx-auto group-hover:scale-110 transition-transform duration-300">
-                    {step.icon}
-                  </div>
-                  {index < steps.length - 1 && (
-                    <div className="hidden lg:block absolute top-10 left-1/2 w-full h-1 bg-gradient-to-r from-purple-500 to-blue-500 transform translate-x-1/2 -z-10"></div>
-                  )}
+          <div className="grid md:grid-cols-3 gap-8">
+            {proTools.map((tool, idx) => (
+              <div key={idx} className="bg-gray-800/30 p-8 rounded-3xl border border-white/5 hover:bg-gray-800/50 transition-colors text-center">
+                <div className="inline-block p-4 rounded-full bg-blue-600/20 text-blue-400 mb-6">
+                  {tool.icon}
                 </div>
-                <div className="text-sm text-purple-600 font-bold mb-2">{step.number}</div>
-                <h3 className="text-xl font-bold text-gray-800 mb-3">{step.title}</h3>
-                <p className="text-gray-600">{step.desc}</p>
+                <h3 className="text-xl font-bold text-white mb-4">{tool.name}</h3>
+                <p className="text-gray-400">{tool.desc}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Compatibility Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Android Compatibility
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Optimized for all modern Android devices with enhanced performance on newer versions
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {compatibility.map((item, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 text-center border border-gray-200 hover:shadow-lg transition duration-300">
-                <div className="text-2xl mb-3">{item.icon}</div>
-                <h3 className="text-lg font-bold text-gray-800 mb-2">{item.version}</h3>
-                <p className="text-gray-600">{item.status}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Loved by Creators Worldwide
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Join thousands of satisfied users who transformed their video editing experience
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl transition duration-300">
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <span
-                      key={i}
-                      className={`text-xl ${i < testimonial.rating ? 'text-yellow-400' : 'text-gray-300'}`}
-                    >
-                      ⭐
+      {/* Technical Specs (NEW) */}
+      <section className="py-20 bg-[#0B1121] border-y border-gray-800">
+        <div className="container mx-auto px-6">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">Technical Specifications</h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {specs.map((spec, idx) => (
+              <div key={idx} className="bg-gray-900 p-6 rounded-2xl border border-gray-700">
+                <div className="flex items-center gap-3 mb-4 text-purple-400">
+                  {spec.icon}
+                  <h4 className="font-bold text-white text-sm">{spec.title}</h4>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {spec.items.map((item, i) => (
+                    <span key={i} className="px-2 py-1 bg-gray-800 rounded text-xs text-gray-300 border border-gray-600">
+                      {item}
                     </span>
                   ))}
                 </div>
-                <p className="text-gray-600 mb-6 italic">"{testimonial.text}"</p>
-                <div className="flex items-center">
-                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full flex items-center justify-center text-white font-bold">
-                    {testimonial.avatar}
-                  </div>
-                  <div className="ml-4">
-                    <div className="font-bold text-gray-800">{testimonial.name}</div>
-                    <div className="text-gray-500 text-sm">{testimonial.role}</div>
-                  </div>
-                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Version History */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* How It Works Steps */}
+      <section className="py-24 bg-gray-900">
+        <div className="container mx-auto px-6">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Continuous Improvement
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Regular updates with new features and performance enhancements
-            </p>
+            <h2 className="text-3xl font-bold text-white">Get Started in Seconds</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {versionHistory.map((version, index) => (
-              <div key={index} className="bg-white rounded-2xl p-6 border border-gray-200 hover:shadow-lg transition duration-300">
-                <div className="text-center mb-4">
-                  <div className="text-2xl font-bold text-purple-600">{version.version}</div>
-                  <div className="text-gray-500 text-sm">{version.date}</div>
+          <div className="relative">
+            {/* Connection Line */}
+            <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent -translate-y-1/2"></div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
+              {steps.map((step, idx) => (
+                <div key={idx} className="flex flex-col items-center text-center">
+                  <div className="w-20 h-20 rounded-full bg-gray-800 border-4 border-gray-900 shadow-xl flex items-center justify-center text-3xl text-blue-400 mb-6 relative">
+                    {step.icon}
+                    <div className="absolute -top-2 -right-2 w-8 h-8 rounded-full bg-blue-600 border-4 border-gray-900 flex items-center justify-center text-white text-sm font-bold">
+                      {step.number}
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-2">{step.title}</h3>
+                  <p className="text-gray-400">{step.desc}</p>
                 </div>
-                <ul className="space-y-2">
-                  {version.features.map((feature, idx) => (
-                    <li key={idx} className="text-sm text-gray-600 flex items-start">
-                      <span className="text-green-500 mr-2">✓</span>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Feature Comparison */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Why Choose Cute Cut Pro?
-            </h2>
-            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Compare with other video editors and see the difference
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl shadow-xl border border-gray-200 overflow-hidden">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-0">
-              <div className="bg-gradient-to-b from-purple-600 to-blue-600 text-white p-8">
-                <h3 className="text-2xl font-bold mb-4">Features</h3>
-                <p className="opacity-90">What makes us stand out</p>
-              </div>
-              <div className="bg-gray-50 p-8 border-l border-gray-200">
-                <h4 className="font-bold text-gray-800 mb-4">Cute Cut Pro</h4>
-                <div className="text-green-500 text-2xl">✓</div>
-              </div>
-              <div className="bg-gray-50 p-8 border-l border-gray-200">
-                <h4 className="font-bold text-gray-800 mb-4">Other Editors</h4>
-                <div className="text-red-500 text-2xl">✗</div>
-              </div>
-              <div className="bg-gray-50 p-8 border-l border-gray-200">
-                <h4 className="font-bold text-gray-800 mb-4">Paid Apps</h4>
-                <div className="text-yellow-500 text-2xl">$</div>
-              </div>
+              ))}
             </div>
+          </div>
+        </div>
+      </section>
 
-            {[
-              'No Watermark',
-              'All Features Free',
-              '4K Export',
-              'Multi-layer Editing',
-              'Advanced Audio Tools',
-              'Regular Updates'
-            ].map((feature, index) => (
-              <div key={index} className="grid grid-cols-1 md:grid-cols-4 gap-0 border-t border-gray-200">
-                <div className="p-6 bg-white">
-                  <span className="font-medium text-gray-800">{feature}</span>
-                </div>
-                <div className="p-6 bg-gray-50 border-l border-gray-200">
-                  <span className="text-green-500 font-bold">Included</span>
-                </div>
-                <div className="p-6 bg-gray-50 border-l border-gray-200">
-                  <span className="text-red-500 font-bold">Not Available</span>
-                </div>
-                <div className="p-6 bg-gray-50 border-l border-gray-200">
-                  <span className="text-purple-500 font-bold">Paid Only</span>
-                </div>
-              </div>
-            ))}
+      {/* Safety Guarantee (NEW) */}
+      <section className="py-16 bg-gradient-to-r from-green-900/20 to-blue-900/20">
+        <div className="container mx-auto px-6 text-center">
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-green-500/20 text-green-400 mb-6">
+            <MdVerifiedUser size={32} />
+          </div>
+          <h2 className="text-3xl font-bold text-white mb-4">100% Safe & Secure Download</h2>
+          <p className="text-gray-400 max-w-2xl mx-auto mb-8">
+            Our APK files are verified, scanned, and safe to install. No root required, no malicious permissions.
+          </p>
+          <div className="flex justify-center gap-6 text-sm text-gray-500">
+            <div className="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" /> VirusTotal Verified
+            </div>
+            <div className="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" /> No Root Needed
+            </div>
+            <div className="flex items-center gap-2">
+              <FaCheckCircle className="text-green-500" /> Official Signature
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats / Trust */}
+      <section className="py-20 bg-gradient-to-r from-blue-900 to-indigo-900 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+        <div className="container mx-auto px-6 relative z-10 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="p-4">
+              <div className="text-4xl font-bold text-white mb-2">10M+</div>
+              <div className="text-blue-200">Downloads</div>
+            </div>
+            <div className="p-4">
+              <div className="text-4xl font-bold text-white mb-2">4.8</div>
+              <div className="text-blue-200">User Rating</div>
+            </div>
+            <div className="p-4">
+              <div className="text-4xl font-bold text-white mb-2">150+</div>
+              <div className="text-blue-200">Countries</div>
+            </div>
+            <div className="p-4">
+              <div className="text-4xl font-bold text-white mb-2">100%</div>
+              <div className="text-blue-200">Virus Free</div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-              Frequently Asked Questions
-            </h2>
-            <p className="text-xl text-gray-600">
-              Everything you need to know about Cute Cut Pro
-            </p>
-          </div>
-
-          <div className="space-y-6">
+      <section className="py-24 bg-gray-900">
+        <div className="container mx-auto px-6 max-w-4xl">
+          <h2 className="text-4xl font-bold text-white text-center mb-16">Common Questions</h2>
+          <div className="space-y-4">
             {[
-              {
-                question: "Is Cute Cut Pro really free with no hidden costs?",
-                answer: "Yes! Cute Cut Pro is completely free with no hidden costs, in-app purchases, or subscription fees. All features are unlocked and there are no watermarks on your exported videos."
-              },
-              {
-                question: "What Android versions are supported?",
-                answer: "Cute Cut Pro supports Android 5.0 (Lollipop) and above. For best performance and access to all features, we recommend Android 8.0 or higher. The app is optimized for each Android version."
-              },
-              {
-                question: "How do I enable installation from unknown sources?",
-                answer: "Go to Settings > Security > Unknown sources and enable it. On newer Android versions, go to Settings > Apps > Special app access > Install unknown apps, then select your browser and enable permission."
-              },
-              {
-                question: "Can I export videos in 4K quality?",
-                answer: "Absolutely! Cute Cut Pro supports export in multiple resolutions including 720p, 1080p, and 4K Ultra HD. The available resolutions depend on your device capabilities and original video quality."
-              },
-              {
-                question: "Is there any watermark on exported videos?",
-                answer: "No, there are no watermarks of any kind on your exported videos. You get complete, professional-quality videos without any branding or limitations."
-              },
-              {
-                question: "How often is the app updated?",
-                answer: "We release regular updates every 1-2 months with new features, performance improvements, and bug fixes. All updates are free and automatically available for download."
-              }
-            ].map((faq, index) => (
-              <div key={index} className="bg-white rounded-2xl p-8 hover:shadow-lg transition duration-300 border border-gray-200">
-                <h3 className="text-xl font-bold text-gray-800 mb-4 flex items-center">
-                  <span className="w-6 h-6 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm mr-3">?</span>
-                  {faq.question}
+              { q: "Is Cute Cut Pro really free?", a: "Yes, this is the fully unlocked Mod APK version which provides all Pro features completely for free without any subscription." },
+              { q: "Does it have watermarks?", a: "No. The Pro version removes all watermarks from your exported videos, allowing for professional-looking results." },
+              { q: "Is it safe to install?", a: "Absolutely. We scan every APK file for viruses and malware. It is 100% safe to download and install on your device." },
+              { q: "Can I edit 4K videos?", a: "Yes, Cute Cut Pro supports importing and exporting 4K Ultra HD videos on supported devices." }
+            ].map((faq, idx) => (
+              <div key={idx} className="bg-gray-800 rounded-2xl p-6 border border-gray-700 hover:border-gray-600 transition-colors">
+                <h3 className="text-lg font-bold text-white mb-3 flex items-start gap-3">
+                  <FaQuestionCircle className="text-blue-500 mt-1 flex-shrink-0" />
+                  {faq.q}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{faq.answer}</p>
+                <p className="text-gray-400 ml-8">{faq.a}</p>
               </div>
             ))}
           </div>
@@ -619,41 +524,23 @@ export default function Home() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-purple-600 via-blue-600 to-indigo-700 text-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Ready to Create Magic?
-          </h2>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Join over 150,000 creators who are already making amazing videos with Cute Cut Pro
-          </p>
+      <section className="py-32 bg-[#0F172A] relative overflow-hidden">
+        <div className="absolute inset-0 bg-blue-600/5"></div>
+        <div className="container mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">Ready to Start Creating?</h2>
+          <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto">Download the latest version of Cute Cut Pro today and transform your moments into cinematic masterpieces.</p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <button
-              onClick={handleDownload}
-              className="group bg-white text-purple-600 px-12 py-5 rounded-2xl font-bold text-lg hover:bg-gray-100 transform hover:scale-105 transition-all duration-300 shadow-2xl flex items-center space-x-3"
-            >
-              <span className="text-2xl">📥</span>
-              <span>Download Cute Cut Pro Now</span>
-            </button>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm opacity-80 max-w-2xl mx-auto">
-            <div className="flex items-center justify-center space-x-2">
-              <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-              <span>No Watermark • All Features Free</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-              <span>84.2 MB • Android 5.0+</span>
-            </div>
-            <div className="flex items-center justify-center space-x-2">
-              <span className="w-2 h-2 bg-green-400 rounded-full"></span>
-              <span>100% Safe • Regular Updates</span>
-            </div>
-          </div>
+          <button
+            onClick={handleDownload}
+            className="px-10 py-5 bg-white text-blue-900 rounded-full font-bold text-xl hover:bg-gray-100 transition-transform hover:scale-105 shadow-2xl shadow-white/10 flex items-center gap-3 mx-auto"
+          >
+            <FaDownload />
+            Download Now
+          </button>
+          <p className="mt-6 text-sm text-gray-500">Requires Android 5.0+</p>
         </div>
       </section>
+
     </Layout>
   );
 }
